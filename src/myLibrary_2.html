@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyLibary</title>
+    <style type="text/css">
+    div { margin: 10px; padding: 10px; border: 1px solid #911; }
+    </style>
+</head>
+<body>
+    <div id="myID" class="myClass" title="foo">MyLibary</div>
+    <div id="myID2" class="myClass" title="foo">MyLibary 2</div>
+
+    <script src="_/js/myLibary.js"></script>
+    <script>
+        (function( $ ) {
+            var $input = $('.myClass'),
+                $output; 
+
+            $output = $input.el();
+            console.log( $output );
+
+            $output = $input.html( 'New Content' ).html();
+            console.log( $output );
+
+            $output = $input.data( 'foo', 'foo-value' ).data( 'foo' );
+            console.log( $output );
+
+        }( a51.dollar ));
+    </script>
+</body>
+</html>

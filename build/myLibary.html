@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyLibary</title>
+    <style type="text/css">
+    div { margin: 10px; padding: 10px; border: 1px solid #911; }
+    </style>
+</head>
+<body>
+    <div title="foo">MyLibary</div>
+
+    <script src="_/js/myLibary.js"></script>
+    <script>
+        (function( $ ) {
+            var $input = $('div'),
+                $output; 
+
+            $output = $input.html();
+            console.log( $output );
+
+            $output = $input.attr( 'title' );
+            console.log( $output );
+
+            $input.attr( 'test', 'test-value');
+            $output = $input.attr( 'test' );
+            console.log( $output );
+
+            $input.click(function( event ) {
+                console.log( 'event', event.type );
+            });
+
+            $input.on( 'mouseenter', function( event ) {
+                console.log( 'event', event.type );
+            });
+
+            $input.on( 'mouseleave', function( event ) {
+                console.log( 'event', event.type );
+            });
+
+            $output = $input.attr( 'foo', 'fooAttr' ).attr( 'foo' );
+            console.log( $output );
+
+            $output = $input.data( 'bar', 'barAttr' ).data( 'bar' );
+            console.log( $output );
+
+        }( a51.dollar ));
+    </script>
+</body>
+</html>
